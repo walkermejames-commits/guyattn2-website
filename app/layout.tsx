@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Starter Project",
-  description: "A clean starting point for building your site.",
-  other: {
-    "codex-preview": "development",
-  },
+  title: "Guy Elton | Decorating, Interiors & Handyman Services",
+  description:
+    "Interior and exterior decorating, furniture restoration, kitchen installation, flooring, decking and practical improvements in Tunbridge Wells and surrounding areas.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -31,9 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <link rel="stylesheet" href="/site.css?v=2" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
