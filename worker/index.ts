@@ -40,7 +40,20 @@ const worker = {
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    const response = await handler.fetch(request, env, ctx);
+    const headers = new Headers(response.headers);
+    headers.set("Content-Security-Policy", "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'");
+    headers.set("Permissions-Policy", "camera=(), geolocation=(), microphone=()");
+    headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("X-Frame-Options", "SAMEORIGIN");
+    headers.set("Cross-Origin-Opener-Policy", "same-origin");
+
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   },
 };
 

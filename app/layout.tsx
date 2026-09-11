@@ -12,12 +12,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://guyattn2.com"),
   title: "Guy Elton | Decorating, Interiors & Handyman Services",
   description:
     "Interior and exterior decorating, furniture restoration, kitchen installation, flooring, decking and practical improvements in Tunbridge Wells and surrounding areas.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
