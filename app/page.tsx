@@ -108,8 +108,8 @@ export default function Home() {
           </div>
         </div>
         <figure className="hero-image">
-          <img src="/work/bathroom-paneling.jpg" alt="Traditional bathroom finished with deep green panelling and precise painted woodwork" />
-          <figcaption>Interiors with character, finished properly.</figcaption>
+          <img src="/work/6-Photo-6.jpg" alt="Dark, characterful bathroom with warm timber, patterned flooring and graphic artwork" />
+          <figcaption>A dark room with a pulse.</figcaption>
         </figure>
       </section>
 
@@ -143,15 +143,15 @@ export default function Home() {
       </section>
 
       <section className="work-feature" id="work">
-        <div className="work-image" role="img" aria-label="Dark green wall panelling and carefully painted bathroom details" />
+        <div className="work-image" role="img" aria-label="Jewel-green stove in a colourful, characterful interior" />
         <div className="work-copy">
           <p className="section-label">Selected finish</p>
           <p className="project-kicker">Colour, proportion, detail</p>
-          <h2>A room with quiet confidence.</h2>
+          <h2>Make the room<br />the main event.</h2>
           <p>
-            Deep green panelling, warm timber and traditional fittings turn a
-            compact bathroom into something distinctive. The difference lives
-            in the preparation, the straight lines and the final small details.
+            A jewel-green stove, floral walls and a richly veined hearth turn
+            a familiar room into a full expression of its owners. The finish
+            is fearless, precise and built to last.
           </p>
           <div className="project-tags">
             <span>Colour consultation</span>
