@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="/site.css?v=2" />
+        <link rel="stylesheet" href="/site.css?v=3" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
