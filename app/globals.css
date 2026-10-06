@@ -190,3 +190,102 @@ h1 em { color: var(--forest); font-weight: 400; }
   .site-footer { grid-template-columns: 1fr; }
   .site-footer > div { justify-self: start; text-align: left; }
 }
+
+/* Midnight glamour refresh: purple lacquer, electric detail and gold light. */
+:root {
+  --ink: #f7efff;
+  --forest: #2a0e4a;
+  --sage: #b9a7d5;
+  --cream: #241136;
+  --paper: #12081d;
+  --gold: #efbd62;
+}
+body {
+  background:
+    radial-gradient(circle at 8% 5%, rgba(91, 58, 189, .32), transparent 28rem),
+    radial-gradient(circle at 92% 72%, rgba(194, 126, 225, .18), transparent 31rem),
+    var(--paper);
+  color: var(--ink);
+}
+.site-header {
+  background: rgba(18, 8, 29, .88);
+  border-bottom-color: rgba(239, 189, 98, .38);
+  backdrop-filter: blur(15px);
+}
+.brand-mark, .button-primary {
+  background: linear-gradient(135deg, #39115f 5%, #742bc6 57%, #efbd62 155%);
+  box-shadow: 0 10px 30px rgba(103, 43, 184, .28);
+}
+.brand small, .eyebrow, .section-label, .trust-line span, .section-heading > p,
+.service-card p, .process-grid p, .work-copy > p:not(.section-label):not(.project-kicker),
+.contact > p:not(.section-label), .site-footer > div span { color: #cbbbe4; }
+.header-call { border-bottom-color: var(--gold); }
+.hero-copy {
+  background:
+    radial-gradient(circle at 16% 14%, rgba(126, 61, 213, .42), transparent 24rem),
+    linear-gradient(145deg, #190829, #35124e 62%, #21102d);
+}
+h1 em, .contact h2 em {
+  background: linear-gradient(102deg, #8c5bff, #e0aaff 52%, #f4ca70);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-intro { color: #eadcf7; }
+.text-link { border-bottom-color: #c88aff; }
+.trust-line { border-top-color: rgba(239, 189, 98, .5); }
+.hero-image { box-shadow: inset 20px 0 50px rgba(46, 8, 76, .2); }
+.hero-image img { filter: saturate(1.16) contrast(1.06); }
+.hero-image figcaption { background: #150620; color: #f6e8ff; }
+.intro-strip {
+  background:
+    linear-gradient(116deg, #321052, #14061f 58%, #3a1552);
+  border-image: linear-gradient(90deg, #21bbff, #8257ff, #f3c05c, #dc5ec6, #2dc9ff) 1;
+}
+.intro-strip .section-label, .section-label.light { color: #f3c05c; }
+.services, .process { background: #1a0b28; }
+.service-grid, .service-card, .process-grid li { border-color: rgba(214, 180, 255, .27); }
+.service-card { background: rgba(56, 24, 80, .35); }
+.service-card:hover { background: linear-gradient(135deg, #54228d, #210836 70%); }
+.service-card:hover p { color: #f1ddff; }
+.work-feature {
+  background: linear-gradient(135deg, #2f1247, #14091f 78%);
+}
+.work-copy > p:not(.section-label):not(.project-kicker) { color: #d7c7e6; }
+.project-tags span { border-color: rgba(239, 189, 98, .55); color: #f5ddad; }
+.gallery { background: #100718; }
+.gallery-card { box-shadow: 0 22px 55px rgba(3, 0, 8, .42); }
+.gallery-card::after { background: linear-gradient(180deg, transparent 22%, rgba(27, 5, 47, .95)); }
+.gallery-card figcaption span { color: #f3c05c; }
+.process { border-top: 1px solid rgba(239, 189, 98, .28); }
+.reviews { background: radial-gradient(circle at 80% 10%, #5b2582, #12051d 48rem); }
+.review-list blockquote { border-color: rgba(233, 209, 255, .3); }
+.reviews-title > p:last-child, .review-list footer { color: #d4c2e8; }
+.contact { background: linear-gradient(135deg, #31114f, #190827); }
+.button-outline { border-color: #f3c05c; color: #ffe6a9; }
+.site-footer { background: #0e0616; border-top: 1px solid rgba(239, 189, 98, .3); }
+
+/* Electric drop caps: each paragraph starts with an expressive painted mark. */
+p::first-letter {
+  color: #8571ff;
+  font-family: "Brush Script MT", "Segoe Print", cursive;
+  font-size: 1.72em;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -.09em;
+  line-height: .6;
+  margin-right: .06em;
+  text-shadow: 1px 1px 0 #1cb8ff, 3px 3px 0 rgba(52, 13, 105, .82);
+}
+.section-label::first-letter, .eyebrow::first-letter, .trust-line span::first-letter,
+.gallery-card figcaption span::first-letter, .review-list footer::first-letter {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-right: 0;
+  text-shadow: none;
+}
