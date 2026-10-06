@@ -35,6 +35,41 @@ const services = [
   },
 ];
 
+const recentWork = [
+  {
+    image: "/work/1-Photo-1.jpg",
+    title: "Colour with conviction",
+    copy: "A jewel-green stove and expressive wallpaper make a traditional room feel unmistakably its own.",
+    className: "gallery-feature",
+  },
+  {
+    image: "/work/2-Photo-2.jpg",
+    title: "Texture, warmth, calm",
+    copy: "A softly layered bedroom scheme that pairs honest materials with a restorative mood.",
+  },
+  {
+    image: "/work/3-Photo-3.jpg",
+    title: "Utility, reimagined",
+    copy: "A practical storage transformation with every shelf planned for everyday use.",
+  },
+  {
+    image: "/work/4-Photo-4.jpg",
+    title: "Stairway renewal",
+    copy: "A considered before-and-after, bringing crisp paintwork and a tailored runner into focus.",
+  },
+  {
+    image: "/work/5-Photo-5.jpg",
+    title: "Tailored from the ground up",
+    copy: "Detailed joinery, immaculate whitework and a runner chosen to lift the entire hall.",
+  },
+  {
+    image: "/work/6-Photo-6.jpg",
+    title: "Small room, big atmosphere",
+    copy: "Inky walls, warm timber and graphic tile work give this compact bathroom real presence.",
+    className: "gallery-tall",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -83,7 +118,8 @@ export default function Home() {
         <p className="intro-statement">
           Guy combines the eye of a decorator with the practical skill to make
           ideas real. From a single room to the spaces beyond your back door,
-          every detail is approached with care.
+          every detail is approached with care. A bright new chapter and fresh
+          perspective have only sharpened his instinct for rooms that bring joy.
         </p>
       </section>
 
@@ -123,6 +159,28 @@ export default function Home() {
             <span>Decorating</span>
             <span>Finishing</span>
           </div>
+        </div>
+      </section>
+
+      <section className="gallery" aria-labelledby="gallery-title">
+        <div className="section-heading gallery-heading">
+          <div>
+            <p className="section-label">Recent transformations</p>
+            <h2 id="gallery-title">Character, colour<br />and a little theatre.</h2>
+          </div>
+          <p>From a precise staircase to a wildly joyful stove, the best homes have a point of view. Here are a few recent moments.</p>
+        </div>
+        <div className="gallery-grid">
+          {recentWork.map((project) => (
+            <figure className={`gallery-card ${project.className ?? ""}`} key={project.title}>
+              <img src={project.image} alt={project.title} />
+              <figcaption>
+                <span>Selected work</span>
+                <h3>{project.title}</h3>
+                <p>{project.copy}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
