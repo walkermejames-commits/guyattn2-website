@@ -91,8 +91,8 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Tunbridge Wells &amp; surrounding areas</p>
-          <h1>Thoughtful spaces.<br /><em>Beautifully finished.</em></h1>
+          <p className="eyebrow">Tunbridge Wells · Decorating &amp; interiors</p>
+          <h1>Rooms with rhythm.<br /><em>Finished with soul.</em></h1>
           <p className="hero-intro">
             Interior and exterior decorating, design-led improvements and
             practical craftsmanship—completed with care, clarity and pride.
@@ -109,17 +109,17 @@ export default function Home() {
         </div>
         <figure className="hero-image">
           <img src="/work/6-Photo-6.jpg" alt="Dark, characterful bathroom with warm timber, patterned flooring and graphic artwork" />
-          <figcaption>A dark room with a pulse.</figcaption>
+          <figcaption>After dark: texture, timber and a little brass.</figcaption>
         </figure>
       </section>
 
       <section className="intro-strip" aria-label="About Guy Elton">
-        <p className="section-label">A considered approach</p>
+        <p className="section-label">The approach</p>
         <p className="intro-statement">
           Guy combines the eye of a decorator with the practical skill to make
           ideas real. From a single room to the spaces beyond your back door,
-          every detail is approached with care. A bright new chapter and fresh
-          perspective have only sharpened his instinct for rooms that bring joy.
+          every detail is considered: the depth of a colour, the line of a
+          runner, the finish that makes a room feel like it has always belonged.
         </p>
       </section>
 
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="section-label">What Guy does</p>
-            <h2>Inside, outside<br />and everything between.</h2>
+            <h2>Every room deserves<br />its own atmosphere.</h2>
           </div>
           <p>One trusted pair of hands for the projects that make home feel more like yours.</p>
         </div>
@@ -147,11 +147,11 @@ export default function Home() {
         <div className="work-copy">
           <p className="section-label">Selected finish</p>
           <p className="project-kicker">Colour, proportion, detail</p>
-          <h2>Make the room<br />the main event.</h2>
+          <h2>Let the room<br />take the spotlight.</h2>
           <p>
-            A jewel-green stove, floral walls and a richly veined hearth turn
-            a familiar room into a full expression of its owners. The finish
-            is fearless, precise and built to last.
+            A jewel-green stove, floral walls and a richly veined hearth make
+            a familiar room feel composed rather than cautious. The work is
+            confident, exacting and designed to hold its note for years.
           </p>
           <div className="project-tags">
             <span>Colour consultation</span>
@@ -165,10 +165,10 @@ export default function Home() {
       <section className="gallery" aria-labelledby="gallery-title">
         <div className="section-heading gallery-heading">
           <div>
-            <p className="section-label">Recent transformations</p>
-            <h2 id="gallery-title">Character, colour<br />and a little theatre.</h2>
+            <p className="section-label">Selected transformations</p>
+            <h2 id="gallery-title">A well-made room<br />stays with you.</h2>
           </div>
-          <p>From a precise staircase to a wildly joyful stove, the best homes have a point of view. Here are a few recent moments.</p>
+          <p>From a tailored staircase to an expressive stove, every project is given a clear point of view and the care to carry it through.</p>
         </div>
         <div className="gallery-grid">
           {recentWork.map((project) => (
@@ -187,8 +187,8 @@ export default function Home() {
       <section className="process">
         <div className="section-heading">
           <div>
-            <p className="section-label">How it works</p>
-            <h2>Straightforward from<br />first call to final coat.</h2>
+            <p className="section-label">The set list</p>
+            <h2>Easy from first<br />conversation to final coat.</h2>
           </div>
         </div>
         <ol className="process-grid">
@@ -201,7 +201,7 @@ export default function Home() {
       <section className="reviews" id="reviews">
         <div className="reviews-title">
           <p className="section-label light">Client words</p>
-          <h2>Recommended by<br />local customers.</h2>
+          <h2>Kind words from<br />local customers.</h2>
           <p>Real comments shared by customers on Guy&apos;s local business profile.</p>
         </div>
         <div className="review-list">
