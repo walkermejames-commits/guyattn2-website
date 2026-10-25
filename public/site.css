@@ -60,3 +60,20 @@
 .site-footer { grid-template-columns:1fr 1fr 1fr; }
 @media(max-width:850px) { .ventures-banner { grid-template-columns:1fr 1fr; }.ventures-banner .button { justify-self:start; }.footer-credit { grid-column:1 / -1; justify-self:start; }.site-footer { grid-template-columns:1fr 1fr; } }
 @media(max-width:520px) { .ventures-banner { align-items:start; grid-template-columns:1fr; }.ventures-banner > p { font-size:.93rem; }.footer-credit { grid-column:auto; }.site-footer { grid-template-columns:1fr; }.hero-image figcaption { bottom:2rem; left:2rem; }.gallery-card figcaption { padding:2rem; } }
+
+/* Service boxes: stepped fan crowns echo the supplied Art Deco reference. */
+.service-grid { border:0; gap:1.35rem; }
+.service-card,.service-card:nth-child(-n+3),.service-card:nth-child(-n+2),.service-card:nth-child(3) { border:0; background:linear-gradient(180deg,rgba(61,34,61,.72),rgba(29,16,31,.96)); min-height:22rem; padding:3.8rem 2rem 2rem; }
+.service-card::before { background:linear-gradient(180deg,transparent 0 17%,var(--brass) 17.2% 17.55%,transparent 17.8%),linear-gradient(90deg,transparent 0 6%,var(--brass) 6.2% 6.55%,transparent 6.8% 93.2%,var(--brass) 93.45% 93.8%,transparent 94%),linear-gradient(135deg,transparent 0 13%,var(--brass) 13.2% 13.55%,transparent 13.8% 86.2%,var(--brass) 86.45% 86.8%,transparent 87%); content:""; inset:0; opacity:.74; pointer-events:none; position:absolute; transition:opacity .25s ease; }
+.service-card::after { border:1px solid rgba(226,201,135,.54); border-top:0; content:""; inset:1.1rem .65rem .65rem; pointer-events:none; position:absolute; }
+.service-card > * { position:relative; z-index:1; }
+.service-card > span { background:#1b101e; display:inline-block; padding:.3rem .5rem; }
+.service-card h3 { margin:3.1rem 0 1rem; }
+.service-card:hover { background:linear-gradient(180deg,#482743,#241528); }
+.service-card:hover::before { opacity:1; }
+.ventures-banner { background:radial-gradient(ellipse at 50% 120%,rgba(197,145,62,.24),transparent 48%),linear-gradient(100deg,#55243a,#29172f 52%,#1c1123); grid-template-columns:1.15fr .9fr auto; margin:0; min-height:17rem; padding-bottom:3.7rem; padding-top:3.7rem; }
+.ventures-banner::before { border-width:2px; inset:.55rem; }
+.ventures-banner::after { inset:.95rem; }
+.ventures-banner .button-primary { box-shadow:0 0 24px rgba(199,160,91,.22); font-weight:600; }
+@media(max-width:850px) { .service-grid { gap:1rem; }.service-card,.service-card:nth-child(-n+3),.service-card:nth-child(-n+2),.service-card:nth-child(3) { min-height:20rem; padding:3.4rem 1.5rem 1.6rem; }.service-card h3 { margin-top:2.4rem; }.ventures-banner { grid-template-columns:1fr 1fr; } }
+@media(max-width:520px) { .service-grid { gap:1rem; }.service-card,.service-card:nth-child(-n+3),.service-card:nth-child(-n+2),.service-card:nth-child(3) { min-height:17rem; padding:3.2rem 1.5rem 1.5rem; }.service-card h3 { margin-top:1.9rem; }.ventures-banner { grid-template-columns:1fr; } }

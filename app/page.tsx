@@ -212,6 +212,12 @@ export default function Home() {
         </figure>
       </section>
 
+      <section className="ventures-banner" aria-label="James E Ventures website">
+        <div><p className="section-label">From James E Ventures</p><h2>Built with care.<br />Made to stand apart.</h2></div>
+        <p>Explore the ventures, creative work and digital experiences behind the ideas.</p>
+        <a className="button button-primary" href="https://www.jameseventures.com/" target="_blank" rel="noreferrer">Discover James E Ventures <span aria-hidden="true">↗</span></a>
+      </section>
+
       <section className="intro-strip" aria-label="About Guy Elton">
         <span className="panel-deco" aria-hidden="true" />
         <p className="section-label">The approach</p>
@@ -319,12 +325,6 @@ export default function Home() {
             <footer>J.S. · Tunbridge Wells</footer>
           </blockquote>
         </div>
-      </section>
-
-      <section className="ventures-banner" aria-label="James E Ventures website">
-        <div><p className="section-label">A note from the studio</p><h2>Good work deserves<br />a good address.</h2></div>
-        <p>Discover more from James E Ventures: a home for the ideas, projects and businesses we build.</p>
-        <a className="button button-primary" href="https://www.jameseventures.com/" target="_blank" rel="noreferrer">Visit James E Ventures <span aria-hidden="true">↗</span></a>
       </section>
 
       <section className="contact" id="contact">
