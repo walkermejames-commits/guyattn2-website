@@ -75,18 +75,19 @@ const recentWork = [
 ];
 
 export default function Home() {
-  const [showEntrance, setShowEntrance] = useState(false);
+  const [showEntrance, setShowEntrance] = useState(true);
   const [musicEnabled, setMusicEnabled] = useState(false);
   const [musicUnavailable, setMusicUnavailable] = useState(false);
 
   useEffect(() => {
     const entrancePlayed = window.sessionStorage.getItem("ge-entrance-played");
-    if (!entrancePlayed) {
-      setShowEntrance(true);
-      window.sessionStorage.setItem("ge-entrance-played", "yes");
-      const timer = window.setTimeout(() => setShowEntrance(false), 2550);
-      return () => window.clearTimeout(timer);
+    if (entrancePlayed) {
+      setShowEntrance(false);
+      return;
     }
+    window.sessionStorage.setItem("ge-entrance-played", "yes");
+    const timer = window.setTimeout(() => setShowEntrance(false), 2550);
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -157,7 +158,7 @@ export default function Home() {
   return (
     <main>
       {showEntrance && (
-        <div className="sovereign-entrance" aria-hidden="true">
+        <div className={`sovereign-entrance${showEntrance ? " is-visible" : " is-dismissed"}`} aria-hidden="true">
           <span className="deco-corner top-left" /><span className="deco-corner top-right" />
           <span className="deco-corner bottom-left" /><span className="deco-corner bottom-right" />
           <div className="sovereign-coin"><span>GE</span><small>Decorating &amp; Interiors</small></div>
