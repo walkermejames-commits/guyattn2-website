@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const phoneDisplay = "07424 824632";
 const phoneHref = "tel:+447424824632";
 const email = "guy312312@hotmail.com";
@@ -71,8 +75,95 @@ const recentWork = [
 ];
 
 export default function Home() {
+  const [showEntrance, setShowEntrance] = useState(false);
+  const [musicEnabled, setMusicEnabled] = useState(false);
+  const [musicUnavailable, setMusicUnavailable] = useState(false);
+
+  useEffect(() => {
+    const entrancePlayed = window.sessionStorage.getItem("ge-entrance-played");
+    if (!entrancePlayed) {
+      setShowEntrance(true);
+      window.sessionStorage.setItem("ge-entrance-played", "yes");
+      const timer = window.setTimeout(() => setShowEntrance(false), 2550);
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!musicEnabled) return;
+    let audioContext: AudioContext | undefined;
+    let master: GainNode | undefined;
+    let timer = 0;
+    let noteIndex = 0;
+    let stopped = false;
+
+    try {
+      const AudioContextConstructor = window.AudioContext;
+      if (!AudioContextConstructor) throw new Error("Audio is unavailable");
+      audioContext = new AudioContextConstructor();
+      master = audioContext.createGain();
+      master.gain.setValueAtTime(0, audioContext.currentTime);
+      master.gain.linearRampToValueAtTime(0.022, audioContext.currentTime + 1.4);
+      master.connect(audioContext.destination);
+      void audioContext.resume();
+
+      const chords = [
+        [110, 130.81, 164.81, 196],
+        [98, 123.47, 146.83, 174.61],
+        [130.81, 155.56, 196, 233.08],
+        [87.31, 110, 130.81, 164.81],
+      ];
+      const playNote = (frequency: number, start: number, length: number, volume: number, type: OscillatorType) => {
+        if (!audioContext || !master) return;
+        const oscillator = audioContext.createOscillator();
+        const envelope = audioContext.createGain();
+        oscillator.type = type;
+        oscillator.frequency.value = frequency;
+        envelope.gain.setValueAtTime(0, start);
+        envelope.gain.linearRampToValueAtTime(volume, start + 0.018);
+        envelope.gain.exponentialRampToValueAtTime(0.001, start + length);
+        oscillator.connect(envelope);
+        envelope.connect(master);
+        oscillator.start(start);
+        oscillator.stop(start + length + 0.03);
+      };
+      const scheduleBar = () => {
+        if (!audioContext || stopped) return;
+        const start = audioContext.currentTime + 0.05;
+        const chord = chords[noteIndex % chords.length];
+        chord.forEach((frequency, index) => playNote(frequency, start + index * 0.026, 2.7, 0.035, "sine"));
+        playNote(chord[0] / 2, start, 2.8, 0.065, "triangle");
+        playNote(chord[2] * 2, start + 1.25, 0.8, 0.012, "sine");
+        noteIndex += 1;
+        timer = window.setTimeout(scheduleBar, 2700);
+      };
+      scheduleBar();
+    } catch {
+      setMusicUnavailable(true);
+      setMusicEnabled(false);
+    }
+
+    return () => {
+      stopped = true;
+      window.clearTimeout(timer);
+      if (audioContext && master) {
+        master.gain.cancelScheduledValues(audioContext.currentTime);
+        master.gain.setTargetAtTime(0, audioContext.currentTime, 0.08);
+        window.setTimeout(() => void audioContext?.close(), 350);
+      }
+    };
+  }, [musicEnabled]);
+
   return (
     <main>
+      {showEntrance && (
+        <div className="sovereign-entrance" aria-hidden="true">
+          <span className="deco-corner top-left" /><span className="deco-corner top-right" />
+          <span className="deco-corner bottom-left" /><span className="deco-corner bottom-right" />
+          <div className="sovereign-coin"><span>GE</span><small>Decorating &amp; Interiors</small></div>
+          <p className="entrance-ornament">Tunbridge Wells · Est. with care</p>
+        </div>
+      )}
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Guy Elton home">
           <span className="brand-mark">GE</span>
@@ -86,7 +177,12 @@ export default function Home() {
           <a href="#work">Work</a>
           <a href="#reviews">Reviews</a>
         </nav>
-        <a className="header-call" href={phoneHref}>Call {phoneDisplay}</a>
+        <div className="header-tools">
+          <button className="music-toggle" type="button" aria-pressed={musicEnabled} onClick={() => setMusicEnabled((enabled) => !enabled)}>
+            <span aria-hidden="true">{musicEnabled ? "♫" : "♪"}</span> {musicEnabled ? "Music on" : musicUnavailable ? "Music unavailable" : "Enable music"}
+          </button>
+          <a className="header-call" href={phoneHref}>Call {phoneDisplay}</a>
+        </div>
       </header>
 
       <section className="hero" id="top">
