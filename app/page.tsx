@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const phoneDisplay = "07424 824632";
 const phoneHref = "tel:+447424824632";
+const messageHref = "sms:+447424824632?body=Hi%20Guy%2C%20I%E2%80%99d%20like%20to%20ask%20about%20a%20quote%20for%20a%20project.";
 const email = "guy312312@hotmail.com";
 
 const services = [
@@ -182,6 +183,7 @@ export default function Home() {
           <button className="music-toggle" type="button" aria-pressed={musicEnabled} onClick={() => setMusicEnabled((enabled) => !enabled)}>
             <span aria-hidden="true">{musicEnabled ? "♫" : "♪"}</span> {musicEnabled ? "Music on" : musicUnavailable ? "Music unavailable" : "Enable music"}
           </button>
+          <a className="header-message" href={messageHref}>Quick quote</a>
           <a className="header-call" href={phoneHref}>Call {phoneDisplay}</a>
         </div>
       </header>
@@ -333,6 +335,7 @@ export default function Home() {
         <p>Call or email Guy for an informal chat about your space and what you would like to achieve.</p>
         <div className="contact-actions">
           <a className="button button-primary" href={phoneHref}>Call {phoneDisplay}</a>
+          <a className="button button-outline" href={messageHref}>Message for a quote</a>
           <a className="button button-outline" href={`mailto:${email}`}>Email Guy</a>
         </div>
       </section>

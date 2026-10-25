@@ -77,3 +77,8 @@
 .ventures-banner .button-primary { box-shadow:0 0 24px rgba(199,160,91,.22); font-weight:600; }
 @media(max-width:850px) { .service-grid { gap:1rem; }.service-card,.service-card:nth-child(-n+3),.service-card:nth-child(-n+2),.service-card:nth-child(3) { min-height:20rem; padding:3.4rem 1.5rem 1.6rem; }.service-card h3 { margin-top:2.4rem; }.ventures-banner { grid-template-columns:1fr 1fr; } }
 @media(max-width:520px) { .service-grid { gap:1rem; }.service-card,.service-card:nth-child(-n+3),.service-card:nth-child(-n+2),.service-card:nth-child(3) { min-height:17rem; padding:3.2rem 1.5rem 1.5rem; }.service-card h3 { margin-top:1.9rem; }.ventures-banner { grid-template-columns:1fr; } }
+.header-message { border:1px solid var(--brass); color:var(--brass-light); font-size:.64rem; letter-spacing:.12em; padding:.56rem .72rem; text-transform:uppercase; white-space:nowrap; }
+.header-message:hover { background:var(--brass); color:#171016; }
+.contact-actions .button-outline { align-items:center; }
+@media(max-width:850px) { .header-message { font-size:.59rem; padding:.5rem .55rem; } }
+@media(max-width:520px) { .header-tools { gap:.4rem; }.header-message { font-size:.53rem; letter-spacing:.06em; padding:.45rem .45rem; }.contact-actions { align-items:center; flex-direction:column; width:100%; }.contact-actions .button { justify-content:center; min-width:min(100%,17rem); } }
