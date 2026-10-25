@@ -187,6 +187,8 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <span className="deco-corner top-left" aria-hidden="true" />
+        <span className="deco-corner top-right" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow">Tunbridge Wells · Decorating &amp; interiors</p>
           <h1>Rooms with rhythm.<br /><em>Finished with soul.</em></h1>
@@ -211,6 +213,7 @@ export default function Home() {
       </section>
 
       <section className="intro-strip" aria-label="About Guy Elton">
+        <span className="panel-deco" aria-hidden="true" />
         <p className="section-label">The approach</p>
         <p className="intro-statement">
           Guy combines the eye of a decorator with the practical skill to make
@@ -242,6 +245,7 @@ export default function Home() {
       <section className="work-feature" id="work">
         <div className="work-image" role="img" aria-label="Jewel-green stove in a colourful, characterful interior" />
         <div className="work-copy">
+          <span className="panel-deco" aria-hidden="true" />
           <p className="section-label">Selected finish</p>
           <p className="project-kicker">Colour, proportion, detail</p>
           <h2>Let the room<br />take the spotlight.</h2>
@@ -317,6 +321,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="ventures-banner" aria-label="James E Ventures website">
+        <div><p className="section-label">A note from the studio</p><h2>Good work deserves<br />a good address.</h2></div>
+        <p>Discover more from James E Ventures: a home for the ideas, projects and businesses we build.</p>
+        <a className="button button-primary" href="https://www.jameseventures.com/" target="_blank" rel="noreferrer">Visit James E Ventures <span aria-hidden="true">↗</span></a>
+      </section>
+
       <section className="contact" id="contact">
         <p className="section-label">Have a project in mind?</p>
         <h2>Let&apos;s make something<br /><em>beautiful.</em></h2>
@@ -333,6 +343,7 @@ export default function Home() {
           <span><strong>Guy Elton</strong><small>Decorating &amp; Interiors</small></span>
         </a>
         <div><span>Tunbridge Wells &amp; surrounding areas</span><a href={phoneHref}>{phoneDisplay}</a><a href={`mailto:${email}`}>{email}</a></div>
+        <div className="footer-credit">Created &amp; managed by <a href="https://www.jameseventures.com/" target="_blank" rel="noreferrer">James E Ventures</a></div>
         <a className="back-top" href="#top">Back to top ↑</a>
       </footer>
     </main>
